@@ -1,0 +1,40 @@
+.card {
+  transition: transform 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--mantine-color-green-2);
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--mantine-color-green-5);
+  }
+}
+
+.cardImage {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.advantageCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.2s ease;
+  border: 1px solid var(--mantine-color-green-2);
+  background: linear-gradient(
+    to bottom,
+    var(--mantine-color-white) 0%,
+    var(--mantine-color-green-0) 100%
+  );
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--mantine-color-green-5);
+  }
+} 

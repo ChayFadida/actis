@@ -6,8 +6,7 @@ const CleaningHero = dynamic(() => import('@/components/Cleaning/CleaningHero/Cl
 const CleaningServices = dynamic(() => import('@/components/Cleaning/CleaningServices/CleaningServices').then(mod => mod.CleaningServices));
 const BuildingMaintenance = dynamic(() => import('@/components/Cleaning/BuildingMaintenance/BuildingMaintenance').then(mod => mod.BuildingMaintenance));
 const CompanyInfo = dynamic(() => import('@/components/Cleaning/CompanyInfo/CompanyInfo').then(mod => mod.CompanyInfo));
-const CompanyAdvantages = dynamic(() => import('@/components/Cleaning/CompanyAdvantages/CompanyAdvantages').then(mod => mod.CompanyAdvantages));
-const ClientTypes = dynamic(() => import('@/components/Cleaning/ClientTypes/ClientTypes').then(mod => mod.ClientTypes));
+const CleaningProcess = dynamic(() => import('@/components/Cleaning/CleaningProcess/CleaningProcess').then(mod => mod.CleaningProcess));
 
 export default function CleaningPage() {
   return (
@@ -16,8 +15,7 @@ export default function CleaningPage() {
       <CompanyInfo />
       <CleaningServices />
       <BuildingMaintenance />
-      <CompanyAdvantages />
-      <ClientTypes />
+      <CleaningProcess />
     </>
   );
 } 

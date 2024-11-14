@@ -1,0 +1,14 @@
+.client {
+  transition: transform 0.2s ease;
+  border: 1px solid var(--mantine-color-violet-2);
+  background: linear-gradient(
+    to bottom,
+    var(--mantine-color-white) 0%,
+    var(--mantine-color-violet-0) 100%
+  );
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: var(--mantine-color-violet-4);
+  }
+} 
