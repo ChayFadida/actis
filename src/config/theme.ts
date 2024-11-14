@@ -7,6 +7,7 @@ export const theme = createTheme({
   headings: {
     fontFamily: 'Assistant, inherit',
   },
+  direction: 'rtl',
   colors: {
     // Custom purple color for Actis
     actis: [

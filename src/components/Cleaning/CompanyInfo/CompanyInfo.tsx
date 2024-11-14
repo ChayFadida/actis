@@ -45,7 +45,7 @@ export const CompanyInfo = () => {
               </Stack>
 
               <Image
-                src="/images/post-1.jpg"
+                src="/images/team.jpg"
                 alt="שירותי ניקיון אקטיס"
                 radius="md"
                 className={styles.image}
