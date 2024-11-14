@@ -1,0 +1,1 @@
+export { CompanyAdvantages } from './CompanyAdvantages'; 

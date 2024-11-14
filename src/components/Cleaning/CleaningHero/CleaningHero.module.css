@@ -1,0 +1,25 @@
+.hero {
+  background: linear-gradient(
+    to right,
+    var(--mantine-color-violet-0) 0%,
+    var(--mantine-color-violet-1) 100%
+  );
+  padding: 4rem 0;
+}
+
+.title {
+  color: var(--mantine-color-violet-8);
+  text-align: center;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  border-radius: var(--mantine-radius-md);
+  box-shadow: var(--mantine-shadow-md);
+} 

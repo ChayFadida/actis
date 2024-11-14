@@ -1,0 +1,12 @@
+.paper {
+  background: linear-gradient(
+    to left,
+    var(--mantine-color-gray-0) 0%,
+    var(--mantine-color-violet-0) 100%
+  );
+  border: 1px solid var(--mantine-color-violet-2);
+}
+
+.highlight {
+  color: var(--mantine-color-violet-8);
+} 

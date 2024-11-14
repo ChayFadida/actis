@@ -1,0 +1,86 @@
+.card {
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  margin: 0 auto;
+}
+
+/* Cleaning Service Card */
+.cleaningCard {
+  background: linear-gradient(
+    to bottom,
+    var(--mantine-color-white) 0%,
+    var(--mantine-color-violet-0) 100%
+  );
+  border-color: var(--mantine-color-violet-2);
+
+  &:hover {
+    border-color: var(--mantine-color-violet-4);
+  }
+}
+
+.violetButton {
+  background-color: var(--mantine-color-violet-6);
+  color: var(--mantine-color-white);
+
+  &:hover {
+    background-color: var(--mantine-color-violet-7);
+  }
+}
+
+/* Travel Service Card */
+.travelCard {
+  background: linear-gradient(
+    to bottom,
+    var(--mantine-color-white) 0%,
+    var(--mantine-color-green-0) 100%
+  );
+  border-color: var(--mantine-color-green-2);
+
+  &:hover {
+    border-color: var(--mantine-color-green-4);
+  }
+}
+
+.greenButton {
+  background-color: var(--mantine-color-green-6);
+  color: var(--mantine-color-white);
+
+  &:hover {
+    background-color: var(--mantine-color-green-7);
+  }
+}
+
+/* Transport Service Card */
+.transportCard {
+  background: linear-gradient(
+    to bottom,
+    var(--mantine-color-white) 0%,
+    var(--mantine-color-blue-0) 100%
+  );
+  border-color: var(--mantine-color-blue-2);
+
+  &:hover {
+    border-color: var(--mantine-color-blue-4);
+  }
+}
+
+.blueButton {
+  background-color: var(--mantine-color-blue-6);
+  color: var(--mantine-color-white);
+
+  &:hover {
+    background-color: var(--mantine-color-blue-7);
+  }
+} 

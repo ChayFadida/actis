@@ -1,0 +1,12 @@
+.card {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.modal {
+  text-align: right;
+} 

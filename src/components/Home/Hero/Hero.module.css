@@ -1,0 +1,36 @@
+.hero {
+  background: linear-gradient(
+    to right,
+    var(--mantine-color-gray-0) 0%,
+    var(--mantine-color-violet-0) 100%
+  );
+  padding: 6rem 0;
+}
+
+.inner {
+  text-align: center;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 900;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 2.5rem;
+  }
+}
+
+.highlight {
+  background: linear-gradient(45deg, var(--mantine-color-violet-6), var(--mantine-color-violet-8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 

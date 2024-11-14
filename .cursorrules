@@ -1,0 +1,206 @@
+Here’s the revised guidance with TypeScript replacing JavaScript, while retaining Mantine and CSS Modules for styling:
+
+---
+
+You are an expert in TypeScript, React, Node.js, Next.js App Router, Zustand, Mantine, and CSS Modules.
+
+### Code Style and Structure
+
+- Write concise, technical TypeScript code following best practices.
+- Use functional and declarative programming patterns; avoid classes.
+- Prefer iteration and modularization over code duplication.
+- Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
+- Structure files: exported component, subcomponents, helpers, static content.
+
+### TypeScript Rules
+
+- Enable `strict` mode in your `tsconfig.json` file.
+- Always type function arguments, return types, and state values explicitly.
+- Prefer `interface` over `type` when defining object shapes.
+- Use `unknown` instead of `any` for better type safety.
+- Avoid using `any`; refine types as much as possible.
+- Use `enum` for well-defined sets of related values.
+- Use `readonly` for arrays or objects that should not be mutated.
+- Use `Partial<T>`, `Pick<T, K>`, and `Omit<T, K>` to modify types.
+
+### Naming Conventions
+
+- Use **PascalCase** for component folder names (e.g., `BigHeader`).
+- Favor named exports for components.
+
+This ensures consistent naming throughout your codebase.
+
+### React Best Practices with TypeScript
+
+### Instruction:
+
+- Use functional components without `FC` (FunctionComponent) or explicit return types.
+- Define prop types using interfaces as shown below:
+  ```ts
+  interface ComponentProps {
+    title: string;
+    isLoading: boolean;
+  }
+  ```
+- Implement the functional component as:
+  ```ts
+  const MyComponent = ({ title, isLoading }: ComponentProps) => {...}
+  ```
+- Implement hooks correctly (`useState`, `useEffect`, `useContext`, `useReducer`, `useMemo`, `useCallback`) with proper typing.
+- Follow the Rules of Hooks (only call hooks at the top level, only call hooks from React functions).
+- Create custom hooks with proper type definitions to extract reusable component logic.
+- Use `React.memo()` for component memoization when appropriate.
+- Use `useCallback` to memoize functions passed as props:
+  ```ts
+  const handleClick = useCallback(() => {...}, []);
+  ```
+- Use `useMemo` for expensive computations:
+  ```ts
+  const computedValue = useMemo(() => expensiveComputation(), [dependencies]);
+  ```
+- Avoid inline function definitions in render to prevent unnecessary re-renders.
+- Prefer composition over inheritance.
+- Use the `children` prop and render props pattern for flexible, reusable components.
+- Implement `React.lazy()` and `Suspense` for code splitting.
+- Use refs sparingly and mainly for DOM access:
+  ```ts
+  const myRef = useRef<HTMLDivElement>(null);
+  ```
+- Prefer controlled components over uncontrolled components.
+- Implement error boundaries using `ErrorBoundary` components to catch and handle errors gracefully.
+- Use cleanup functions in `useEffect` to prevent memory leaks.
+- Use short-circuit evaluation and ternary operators for conditional rendering.
+
+### State Management
+
+- Use Zustand for global state management with proper TypeScript typing.
+
+  ```ts
+  interface State {
+    count: number;
+    increment: () => void;
+  }
+
+  const useStore = create<State>((set) => ({
+    count: 0,
+    increment: () => set((state) => ({ count: state.count + 1 })),
+  }));
+  ```
+
+- Lift state up when needed to share state between components.
+- Use context for intermediate state sharing when prop drilling becomes cumbersome.
+
+### UI and Styling
+
+- Use `mantine.dev` components for all UI elements, utilizing Mantine's TypeScript support.
+- Apply custom styles using CSS Modules:
+  - Create a `.module.css` file for each component that needs custom styling.
+  - Use camelCase for class names in CSS Modules files.
+  - Maintain simple, component-specific styles using CSS Modules for easier maintenance and scalability.
+  - Type your classes using:
+    ```ts
+    import styles from "./Component.module.css";
+    ```
+
+### Mantine with TypeScript
+
+- Leverage Mantine's inbuilt TypeScript support for `useStyles`, `sx`, and `MantineProvider` for theme customization.
+- Example usage:
+
+  ```ts
+  const useStyles = createStyles((theme) => ({
+    button: {
+      backgroundColor: theme.colors.blue[6],
+      "&:hover": {
+        backgroundColor: theme.colors.blue[8],
+      },
+    },
+  }));
+
+  function MyButton() {
+    const { classes } = useStyles();
+    return <Button className={classes.button}>Click me</Button>;
+  }
+  ```
+
+### File Structure for Styling
+
+- Place CSS Modules files next to their corresponding component files.
+- Example structure:
+  ```plaintext
+  components/
+    Button/
+      Button.tsx
+      Button.module.css
+    Card/
+      Card.tsx
+      Card.module.css
+  ```
+
+### CSS Modules Best Practices with TypeScript
+
+- Define custom classes in `.module.css` and import them into TypeScript components:
+  ```ts
+  import styles from "./Component.module.css";
+  ```
+- Apply classes using the `styles` object:
+  ```ts
+  <div className={styles.containerClass} />
+  ```
+- Use variables for colors, fonts, and other repeated values, either using Mantine's `theme` or a custom configuration file.
+- Keep specificity low by avoiding deep nesting in CSS Modules.
+
+### Performance Optimization
+
+- Minimize the use of `'use client'`, `useEffect`, and `useState`; favor React Server Components (RSC).
+- Wrap client components in `Suspense` with a fallback.
+- Use dynamic loading for non-critical components.
+- Optimize images: use WebP format, include size data, and implement lazy loading.
+- Implement route-based code splitting in Next.js.
+- Minimize the use of global styles; prefer modular, scoped styles with CSS Modules.
+
+### Forms and Validation
+
+- Use Mantine's form components with TypeScript support.
+- Implement form validation (client-side and server-side).
+- Consider using libraries like `react-hook-form` for complex forms with proper type validation.
+- Use Zod or Joi for schema validation.
+
+### Error Handling and Validation
+
+- Prioritize error handling and edge cases.
+- Handle errors and edge cases at the beginning of functions.
+- Use early returns for error conditions to avoid deeply nested `if` statements.
+- Avoid unnecessary `else` statements; use `if-return` pattern instead.
+- Model expected errors as return values in Server Actions.
+- Implement proper error logging and user-friendly error messages.
+
+### Accessibility (a11y)
+
+- Use semantic HTML elements.
+- Implement proper ARIA attributes.
+- Ensure keyboard navigation support.
+
+### Testing
+
+- Write unit tests for components using Jest and React Testing Library with TypeScript.
+- Implement integration tests for critical user flows.
+- Use snapshot testing judiciously.
+
+### Security
+
+- Sanitize user inputs to prevent XSS attacks.
+- Use `dangerouslySetInnerHTML` sparingly and only with sanitized content.
+
+### Internationalization (i18n)
+
+- Use libraries like `react-intl` or `next-i18next` for internationalization.
+
+### Key Conventions
+
+- Use `nuqs` for URL search parameter state management.
+- Optimize Web Vitals (LCP, CLS, FID).
+- Limit `'use client'`:
+  - Favor server components and Next.js SSR.
+  - Use only for Web API access in small components.
+  - Avoid for data fetching or state management.

@@ -1,0 +1,17 @@
+.imageWrapper {
+  overflow: hidden;
+  border-radius: var(--mantine-radius-md);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.image {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+} 

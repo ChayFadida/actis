@@ -1,0 +1,1 @@
+export { CleaningHero } from './CleaningHero'; 
