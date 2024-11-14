@@ -23,7 +23,11 @@ export default function Layout({
         />
       </head>
       <body>
-        <MantineProvider theme={theme} defaultColorScheme="light">
+        <MantineProvider 
+          theme={theme} 
+          defaultColorScheme="light"
+          cssVariablesSelector="html[dir=rtl]"
+        >
           <RootLayout>
             {children}
           </RootLayout>

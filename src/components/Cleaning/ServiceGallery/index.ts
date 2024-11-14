@@ -1,1 +1,0 @@
-export { ServiceGallery } from './ServiceGallery'; 

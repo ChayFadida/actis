@@ -1,13 +1,12 @@
-import { createTheme, rem } from '@mantine/core';
+import { createTheme, rem, MantineThemeOverride } from '@mantine/core';
 
-export const theme = createTheme({
+export const theme: MantineThemeOverride = {
   primaryColor: 'violet',
   defaultRadius: 'md',
   fontFamily: 'Assistant, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
   headings: {
     fontFamily: 'Assistant, inherit',
   },
-  direction: 'rtl',
   colors: {
     // Custom purple color for Actis
     actis: [
@@ -26,7 +25,7 @@ export const theme = createTheme({
   other: {
     headerHeight: rem(60),
   }
-});
+};
 
 // Add type for custom colors
 declare module '@mantine/core' {
