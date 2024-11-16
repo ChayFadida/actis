@@ -1,13 +1,14 @@
 .card {
   transition: transform 0.2s ease;
   cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--mantine-color-blue-2);
 
   &:hover {
     transform: translateY(-5px);
-
-    .imageOverlay {
-      opacity: 1;
-    }
+    border-color: var(--mantine-color-blue-5);
   }
 }
 
@@ -42,15 +43,6 @@
   opacity: 1;
 }
 
-.contentPaper {
-  background: linear-gradient(
-    to left,
-    var(--mantine-color-gray-0) 0%,
-    var(--mantine-color-green-0) 100%
-  );
-  border: 1px solid var(--mantine-color-green-2);
-}
-
 .modal {
   text-align: right;
 }
@@ -66,22 +58,11 @@
   box-shadow: var(--mantine-shadow-md);
 }
 
-.advantageCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  transition: transform 0.2s ease;
-  border: 1px solid var(--mantine-color-green-2);
+.contentPaper {
   background: linear-gradient(
-    to bottom,
-    var(--mantine-color-white) 0%,
-    var(--mantine-color-green-0) 100%
+    to left,
+    var(--mantine-color-gray-0) 0%,
+    var(--mantine-color-blue-0) 100%
   );
-
-  &:hover {
-    transform: translateY(-5px);
-    border-color: var(--mantine-color-green-5);
-  }
+  border: 1px solid var(--mantine-color-blue-2);
 } 

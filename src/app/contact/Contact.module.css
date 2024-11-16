@@ -1,0 +1,61 @@
+.paper {
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    var(--mantine-color-gray-0) 0%,
+    var(--mantine-color-blue-0) 100%
+  );
+  border: 1px solid var(--mantine-color-blue-2);
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-xs);
+}
+
+.contactIcon {
+  flex-shrink: 0;
+}
+
+.contactText {
+  flex-grow: 1;
+}
+
+@media (max-width: $mantine-breakpoint-sm) {
+  .paper {
+    margin-bottom: var(--mantine-spacing-md);
+  }
+
+  .contactInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+}
+
+/* Form styles */
+.form {
+  width: 100%;
+}
+
+.submitButton {
+  margin-top: var(--mantine-spacing-md);
+  width: 100%;
+}
+
+/* Animation for success message */
+.successMessage {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

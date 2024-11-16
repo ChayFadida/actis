@@ -1,0 +1,120 @@
+.accessibilityWrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.accessibilityButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: var(--mantine-shadow-lg);
+  background-color: var(--mantine-color-blue-6);
+  color: white;
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  transform: translateZ(0);
+  will-change: transform;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: var(--mantine-color-blue-7);
+  }
+}
+
+.accessibilityMenu {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  width: 300px;
+  background-color: var(--mantine-color-white);
+  border-radius: var(--mantine-radius-md);
+  box-shadow: var(--mantine-shadow-lg);
+  z-index: 9998;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Font size classes */
+.textSize80 { font-size: 80% !important; }
+.textSize90 { font-size: 90% !important; }
+.textSize100 { font-size: 100% !important; }
+.textSize110 { font-size: 110% !important; }
+.textSize120 { font-size: 120% !important; }
+.textSize130 { font-size: 130% !important; }
+.textSize140 { font-size: 140% !important; }
+.textSize150 { font-size: 150% !important; }
+
+/* Other accessibility classes */
+.highContrast {
+  & > *:not(.accessibilityWrapper):not(.accessibilityButton):not(.accessibilityMenu) {
+    filter: contrast(150%);
+  }
+}
+
+.invertedContrast {
+  & > *:not(.accessibilityWrapper):not(.accessibilityButton):not(.accessibilityMenu) {
+    filter: invert(100%);
+  }
+}
+
+.grayscale {
+  & > *:not(.accessibilityWrapper):not(.accessibilityButton):not(.accessibilityMenu) {
+    filter: grayscale(100%);
+  }
+}
+
+.lightBackground {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.linkHighlight a {
+  text-decoration: underline !important;
+  color: var(--mantine-color-blue-7) !important;
+}
+
+.readableFont {
+  font-family: Arial, sans-serif !important;
+  letter-spacing: 0.1em !important;
+  word-spacing: 0.2em !important;
+  line-height: 1.8 !important;
+}
+
+/* RTL Slider styles */
+.sliderWrapper {
+  width: 150px;
+  transform: scaleX(-1);
+  padding: 0 10px;
+}
+
+.sliderMark,
+.sliderTooltip {
+  display: inline-block;
+  transform: scaleX(-1);
+  unicode-bidi: plaintext;
+  direction: ltr;
+  text-align: center;
+  min-width: 35px;
+}
+
+.sliderWrapper [class*="thumb"] {
+  transform: scaleX(-1);
+  border: 2px solid var(--mantine-color-blue-6);
+}
+
+.sliderWrapper [class*="track"] {
+  background-color: var(--mantine-color-gray-2);
+}
+
+.sliderWrapper [class*="bar"] {
+  background-color: var(--mantine-color-blue-6);
+} 
