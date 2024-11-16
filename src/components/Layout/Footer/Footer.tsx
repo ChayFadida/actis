@@ -9,7 +9,6 @@ import {
   IconBus,
   IconTruck,
   IconSpray,
-  IconBrandWhatsapp,
   IconBrandFacebook,
   IconBuildingStore
 } from '@tabler/icons-react';
@@ -23,47 +22,32 @@ export const Footer = () => {
           <Stack className={styles.section}>
             <Title order={3} mb="md">צור קשר</Title>
             <Group gap="xs">
-              <IconBrandFacebook size={20} />
-              <Anchor
-                href="https://www.facebook.com/actis.cleaning.services"
-                target="_blank"
-                rel="noopener noreferrer"
-                c="inherit"
-                className={styles.link}
-              >
-                Actis
-              </Anchor>
+              <IconBuildingStore size={20} />
+              <Text>סניף חיפה: דרך העצמאות 90 א׳</Text>
+            </Group>
+            <Group gap="xs">
+              <IconPhone size={20} />
+              <Text>טלפון: 04-8515150</Text>
             </Group>
             <Group gap="xs">
               <IconMail size={20} />
               <Text>דוא״ל: office@actis.co.il</Text>
             </Group>
-          </Stack>
-
-          <Stack className={styles.section}>
-            <Title order={3} mb="md">הסניפים שלנו</Title>
             <Group gap="xs">
-              <IconBuildingStore size={20} />
-              <Text fw={500}>סניף ראשי חיפה:</Text>
+              <IconBrandFacebook size={20} />
+              <Anchor
+                href="https://www.facebook.com/ActisIsrael"
+                target="_blank"
+                rel="noopener noreferrer"
+                c="inherit"
+                className={styles.link}
+              >
+                Actis Israel
+              </Anchor>
             </Group>
-            <Text size="sm" ml={28}>דרך העצמאות 90 א׳</Text>
-            
-            <Group gap="xs" mt="xs">
-              <IconBuildingStore size={20} />
-              <Text fw={500}>סניף נתניה:</Text>
-            </Group>
-            <Group gap="xs" ml={28}>
-              <IconPhone size={16} />
-              <Text size="sm">098612614</Text>
-            </Group>
-
-            <Group gap="xs" mt="xs">
-              <IconBuildingStore size={20} />
-              <Text fw={500}>סניף תל אביב:</Text>
-            </Group>
-            <Group gap="xs" ml={28}>
-              <IconPhone size={16} />
-              <Text size="sm">036886887</Text>
+            <Group gap="xs">
+              <IconClock size={20} />
+              <Text>זמינים 24/7</Text>
             </Group>
           </Stack>
 
@@ -89,7 +73,28 @@ export const Footer = () => {
           </Stack>
 
           <Stack className={styles.section}>
-            <Title order={3} mb="md">שירותי הסעות והובלות</Title>
+            <Title order={3} mb="md">שירותי הסעות</Title>
+            <List
+              spacing="xs"
+              size="sm"
+              center
+              icon={
+                <ThemeIcon color="green" size={20} radius="xl">
+                  <IconBus size={12} />
+                </ThemeIcon>
+              }
+            >
+              <List.Item>הסעות תלמידים</List.Item>
+              <List.Item>הסעות עובדים</List.Item>
+              <List.Item>הסעות לאירועים</List.Item>
+              <List.Item>הסעות VIP</List.Item>
+              <List.Item>טיולים מאורגנים</List.Item>
+              <List.Item>שירות 24/7</List.Item>
+            </List>
+          </Stack>
+
+          <Stack className={styles.section}>
+            <Title order={3} mb="md">שירותי הובלות</Title>
             <List
               spacing="xs"
               size="sm"
@@ -102,9 +107,9 @@ export const Footer = () => {
             >
               <List.Item>הובלות דירות</List.Item>
               <List.Item>הובלות משרדים</List.Item>
-              <List.Item>הסעות תלמידים</List.Item>
-              <List.Item>הסעות עובדים</List.Item>
-              <List.Item>הסעות לאירועים</List.Item>
+              <List.Item>שירותי אריזה</List.Item>
+              <List.Item>שירותי אחסון</List.Item>
+              <List.Item>פריקת מכולות</List.Item>
               <List.Item>שירותי שליחויות</List.Item>
             </List>
           </Stack>
