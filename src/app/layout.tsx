@@ -4,6 +4,7 @@ import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { RootLayout } from '@/components/Layout/RootLayout/RootLayout';
 import { LoadingOverlay } from '@/components/Layout/LoadingOverlay/LoadingOverlay';
+import { AccessibilityMenu } from '@/components/Accessibility/AccessibilityMenu';
 import { theme } from '@/config/theme';
 import { useEffect, useState } from 'react';
 import '@mantine/core/styles.css';
@@ -45,6 +46,7 @@ export default function Layout({
           <RootLayout>
             {children}
           </RootLayout>
+          <AccessibilityMenu />
         </MantineProvider>
       </body>
     </html>
