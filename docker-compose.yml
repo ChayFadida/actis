@@ -1,9 +1,13 @@
 version: '3.8'
 services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        - RESEND_API_KEY=${RESEND_API_KEY}
+        - CONTACT_EMAIL=${CONTACT_EMAIL}
     ports:
       - "3000:3000"
     environment:
       - RESEND_API_KEY=${RESEND_API_KEY}
-      - CONTACT_EMAIL=${CONTACT_EMAIL} 
+      - CONTACT_EMAIL=${CONTACT_EMAIL}
