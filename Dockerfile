@@ -3,6 +3,14 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
+# Define build arguments
+ARG RESEND_API_KEY
+ARG CONTACT_EMAIL
+
+# Set environment variables
+ENV RESEND_API_KEY=$RESEND_API_KEY
+ENV CONTACT_EMAIL=$CONTACT_EMAIL
+
 # Copy package files
 COPY package.json yarn.lock ./
 
@@ -14,7 +22,10 @@ COPY next.config.mjs .
 COPY tsconfig.json .
 COPY public ./public
 COPY src ./src
-COPY .env.production ./.env
+
+# Create .env file from build arguments
+RUN echo "RESEND_API_KEY=$RESEND_API_KEY" > .env && \
+    echo "CONTACT_EMAIL=$CONTACT_EMAIL" >> .env
 
 # Build the application
 ENV NEXT_TELEMETRY_DISABLED 1
