@@ -1,72 +1,117 @@
 'use client';
 
-import { Container, Group, Text, Stack, ActionIcon, Grid } from '@mantine/core';
-import { IconBrandTwitter, IconBrandLinkedin, IconBrandFacebook, IconMail } from '@tabler/icons-react';
+import { Container, Group, Stack, Text, Title, List, ThemeIcon, SimpleGrid, Anchor } from '@mantine/core';
+import { 
+  IconPhone, 
+  IconMail, 
+  IconMapPin, 
+  IconClock,
+  IconBus,
+  IconTruck,
+  IconSpray,
+  IconBrandWhatsapp,
+  IconBrandFacebook,
+  IconBuildingStore
+} from '@tabler/icons-react';
 import styles from './Footer.module.css';
 
 export const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className={styles.footer}>
-      <Container size="lg">
-        <Grid gutter={40}>
-          <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
-            <Stack gap="md">
-              <Text size="xl" fw={700}>שם החברה</Text>
-              <Text size="sm" c="dimmed">
-                מובילים עסקים קדימה עם פתרונות טכנולוגיים חדשניים
-              </Text>
-            </Stack>
-          </Grid.Col>
-          
-          <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
-            <Stack gap="md">
-              <Text fw={500}>שירותים</Text>
-              <Stack gap="xs">
-                <Text component="a" href="/services" size="sm">אנליטיקה עסקית</Text>
-                <Text component="a" href="/services" size="sm">פתרונות ענן</Text>
-                <Text component="a" href="/services" size="sm">אבטחת מידע</Text>
-                <Text component="a" href="/services" size="sm">פיתוח מותאם</Text>
-              </Stack>
-            </Stack>
-          </Grid.Col>
+      <Container size="lg" py="xl">
+        <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }} spacing={50}>
+          <Stack className={styles.section}>
+            <Title order={3} mb="md">צור קשר</Title>
+            <Group gap="xs">
+              <IconBrandFacebook size={20} />
+              <Anchor
+                href="https://www.facebook.com/ActisIsrael"
+                target="_blank"
+                rel="noopener noreferrer"
+                c="inherit"
+                className={styles.link}
+              >
+                Actis
+              </Anchor>
+            </Group>
+            <Group gap="xs">
+              <IconMail size={20} />
+              <Text>דוא״ל: office@actis.co.il</Text>
+            </Group>
+          </Stack>
 
-          <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
-            <Stack gap="md">
-              <Text fw={500}>החברה</Text>
-              <Stack gap="xs">
-                <Text component="a" href="/about" size="sm">אודות</Text>
-                <Text component="a" href="/portfolio" size="sm">פרויקטים</Text>
-                <Text component="a" href="/contact" size="sm">צור קשר</Text>
-                <Text component="a" href="/careers" size="sm">דרושים</Text>
-              </Stack>
-            </Stack>
-          </Grid.Col>
+          <Stack className={styles.section}>
+            <Title order={3} mb="md">הסניפים שלנו</Title>
+            <Group gap="xs">
+              <IconBuildingStore size={20} />
+              <Text fw={500}>סניף ראשי חיפה:</Text>
+            </Group>
+            <Text size="sm" ml={28}>דרך העצמאות 90 א׳</Text>
+            
+            <Group gap="xs" mt="xs">
+              <IconBuildingStore size={20} />
+              <Text fw={500}>סניף נתניה:</Text>
+            </Group>
+            <Group gap="xs" ml={28}>
+              <IconPhone size={16} />
+              <Text size="sm">098612614</Text>
+            </Group>
 
-          <Grid.Col span={{ base: 12, sm: 6, md: 3 }}>
-            <Stack gap="md">
-              <Text fw={500}>התחברו אלינו</Text>
-              <Group gap="xs">
-                <ActionIcon size="lg" variant="subtle" component="a" href="#" target="_blank">
-                  <IconBrandTwitter size={24} />
-                </ActionIcon>
-                <ActionIcon size="lg" variant="subtle" component="a" href="#" target="_blank">
-                  <IconBrandLinkedin size={24} />
-                </ActionIcon>
-                <ActionIcon size="lg" variant="subtle" component="a" href="https://www.facebook.com/actis.cleaning.services" target="_blank">
-                  <IconBrandFacebook size={24} />
-                </ActionIcon>
-                <ActionIcon size="lg" variant="subtle" component="a" href="mailto:contact@company.com">
-                  <IconMail size={24} />
-                </ActionIcon>
-              </Group>
-            </Stack>
-          </Grid.Col>
-        </Grid>
+            <Group gap="xs" mt="xs">
+              <IconBuildingStore size={20} />
+              <Text fw={500}>סניף תל אביב:</Text>
+            </Group>
+            <Group gap="xs" ml={28}>
+              <IconPhone size={16} />
+              <Text size="sm">036886887</Text>
+            </Group>
+          </Stack>
 
-        <Text size="sm" c="dimmed" ta="center" mt={50}>
-          © {currentYear} שם החברה. כל הזכויות שמורות.
+          <Stack className={styles.section}>
+            <Title order={3} mb="md">שירותי ניקיון</Title>
+            <List
+              spacing="xs"
+              size="sm"
+              center
+              icon={
+                <ThemeIcon color="violet" size={20} radius="xl">
+                  <IconSpray size={12} />
+                </ThemeIcon>
+              }
+            >
+              <List.Item>ניקיון משרדים</List.Item>
+              <List.Item>ניקיון בתי ספר ומוסדות</List.Item>
+              <List.Item>ניקיון מפעלים ומחסנים</List.Item>
+              <List.Item>ניקיון חדרי מדרגות</List.Item>
+              <List.Item>ניקיון לאחר שיפוץ</List.Item>
+              <List.Item>ניקיון שטיחים וריפודים</List.Item>
+            </List>
+          </Stack>
+
+          <Stack className={styles.section}>
+            <Title order={3} mb="md">שירותי הסעות והובלות</Title>
+            <List
+              spacing="xs"
+              size="sm"
+              center
+              icon={
+                <ThemeIcon color="blue" size={20} radius="xl">
+                  <IconTruck size={12} />
+                </ThemeIcon>
+              }
+            >
+              <List.Item>הובלות דירות</List.Item>
+              <List.Item>הובלות משרדים</List.Item>
+              <List.Item>הסעות תלמידים</List.Item>
+              <List.Item>הסעות עובדים</List.Item>
+              <List.Item>הסעות לאירועים</List.Item>
+              <List.Item>שירותי שליחויות</List.Item>
+            </List>
+          </Stack>
+        </SimpleGrid>
+
+        <Text ta="center" size="sm" mt={50} c="dimmed">
+          © {new Date().getFullYear()} אקטיס שירותי ניקיון, הסעות והובלות. כל הזכויות שמורות.
         </Text>
       </Container>
     </footer>
