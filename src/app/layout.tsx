@@ -1,5 +1,6 @@
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { RootLayout } from '@/components/Layout/RootLayout/RootLayout';
+import { AccessibilityMenu } from '@/components/Accessibility/AccessibilityMenu';
 import { theme } from '@/config/theme';
 import '@mantine/core/styles.css';
 
@@ -14,7 +15,7 @@ export default function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="he" dir="rtl">
+    <html lang="he" dir="rtl" suppressHydrationWarning>
       <head>
         <ColorSchemeScript defaultColorScheme="light" />
         <link
@@ -22,15 +23,15 @@ export default function Layout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <MantineProvider 
-          theme={theme} 
+          theme={theme}
           defaultColorScheme="light"
-          cssVariablesSelector="html[dir=rtl]"
         >
           <RootLayout>
             {children}
           </RootLayout>
+          <AccessibilityMenu />
         </MantineProvider>
       </body>
     </html>
