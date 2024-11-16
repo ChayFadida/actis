@@ -1,19 +1,34 @@
-import { MantineProvider, ColorSchemeScript } from '@mantine/core';
-import { RootLayout } from '@/components/Layout/RootLayout/RootLayout';
-import { AccessibilityMenu } from '@/components/Accessibility/AccessibilityMenu';
-import { theme } from '@/config/theme';
-import '@mantine/core/styles.css';
+'use client';
 
-export const metadata = {
-  title: 'אקטיס - שירותי ניקיון, הסעות והובלות',
-  description: 'שירותי ניקיון מקצועיים, הסעות וטיולים, והובלות ושליחויות בפריסה ארצית',
-};
+import { MantineProvider, ColorSchemeScript } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
+import { RootLayout } from '@/components/Layout/RootLayout/RootLayout';
+import { LoadingOverlay } from '@/components/Layout/LoadingOverlay/LoadingOverlay';
+import { theme } from '@/config/theme';
+import { useEffect, useState } from 'react';
+import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
 
 export default function Layout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const hideLoader = () => {
+      setIsLoading(false);
+    };
+
+    if (document.readyState === 'complete') {
+      hideLoader();
+    } else {
+      window.addEventListener('load', hideLoader);
+      return () => window.removeEventListener('load', hideLoader);
+    }
+  }, []);
+
   return (
     <html lang="he" dir="rtl" suppressHydrationWarning>
       <head>
@@ -24,14 +39,12 @@ export default function Layout({
         />
       </head>
       <body suppressHydrationWarning>
-        <MantineProvider 
-          theme={theme}
-          defaultColorScheme="light"
-        >
+        <MantineProvider theme={theme} defaultColorScheme="light">
+          <Notifications position="top-center" zIndex={1000} />
+          {isLoading && <LoadingOverlay />}
           <RootLayout>
             {children}
           </RootLayout>
-          <AccessibilityMenu />
         </MantineProvider>
       </body>
     </html>
