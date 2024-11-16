@@ -1,5 +1,25 @@
 .footer {
-  padding: 2rem 0;
-  margin-top: auto;
+  padding-top: calc(var(--mantine-spacing-xl) * 2);
+  padding-bottom: var(--mantine-spacing-xl);
+  background-color: var(--mantine-color-gray-0);
   border-top: 1px solid var(--mantine-color-gray-2);
+}
+
+.section {
+  @media (max-width: $mantine-breakpoint-sm) {
+    text-align: center;
+
+    & > div {
+      justify-content: center;
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--mantine-color-blue-5);
+  }
 } 
