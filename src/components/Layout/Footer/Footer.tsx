@@ -54,7 +54,7 @@ export const Footer = () => {
                 <ActionIcon size="lg" variant="subtle" component="a" href="#" target="_blank">
                   <IconBrandLinkedin size={24} />
                 </ActionIcon>
-                <ActionIcon size="lg" variant="subtle" component="a" href="#" target="_blank">
+                <ActionIcon size="lg" variant="subtle" component="a" href="https://www.facebook.com/actis.cleaning.services" target="_blank">
                   <IconBrandFacebook size={24} />
                 </ActionIcon>
                 <ActionIcon size="lg" variant="subtle" component="a" href="mailto:contact@company.com">
