@@ -137,7 +137,7 @@ export default function ContactPage() {
                   <ThemeIcon color="blue" size={24} radius="xl">
                     <IconMail size={16} />
                   </ThemeIcon>
-                  <Text>דוא״ל: office@actis.co.il</Text>
+                  <Text>דוא״ל: info@actis.co.il</Text>
                 </Group>
               </Stack>
             </Paper>

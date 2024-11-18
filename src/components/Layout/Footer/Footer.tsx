@@ -10,11 +10,16 @@ import {
   IconTruck,
   IconSpray,
   IconBrandFacebook,
-  IconBuildingStore
+  IconBuildingStore,
+  IconBrandWhatsapp
 } from '@tabler/icons-react';
 import styles from './Footer.module.css';
 
 export const Footer = () => {
+  const phoneNumber = '0505378402';
+  const whatsappLink = `https://wa.me/972${phoneNumber.substring(1)}`;
+  const emailAddress = 'office@actis.co.il';
+
   return (
     <footer className={styles.footer}>
       <Container size="lg" py="xl">
@@ -27,11 +32,29 @@ export const Footer = () => {
             </Group>
             <Group gap="xs">
               <IconPhone size={20} />
-              <Text>טלפון: 04-8515150</Text>
+              <Text>טלפון: {phoneNumber}</Text>
+            </Group>
+            <Group gap="xs">
+              <IconBrandWhatsapp size={20} />
+              <Anchor
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                c="inherit"
+                className={styles.link}
+              >
+                WhatsApp
+              </Anchor>
             </Group>
             <Group gap="xs">
               <IconMail size={20} />
-              <Text>דוא״ל: office@actis.co.il</Text>
+              <Anchor
+                href={`mailto:${emailAddress}`}
+                c="inherit"
+                className={styles.link}
+              >
+                {emailAddress}
+              </Anchor>
             </Group>
             <Group gap="xs">
               <IconBrandFacebook size={20} />
