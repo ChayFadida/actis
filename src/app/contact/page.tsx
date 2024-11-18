@@ -116,7 +116,7 @@ export default function ContactPage() {
                   <ThemeIcon color="blue" size={24} radius="xl">
                     <IconPhone size={16} />
                   </ThemeIcon>
-                  <Text>טלפון: 0505378402</Text>
+                  <Text>טלפון: 04-8515150</Text>
                 </Group>
 
                 <Group gap="xs">

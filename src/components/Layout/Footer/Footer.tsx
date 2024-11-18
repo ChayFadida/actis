@@ -16,7 +16,7 @@ import {
 import styles from './Footer.module.css';
 
 export const Footer = () => {
-  const phoneNumber = '04-85151580';
+  const phoneNumber = '04-8515150';
   const whatsappLink = `https://wa.me/972505378402`;
   const emailAddress = 'info@actis.co.il';
 
@@ -59,7 +59,7 @@ export const Footer = () => {
             <Group gap="xs">
               <IconBrandFacebook size={20} />
               <Anchor
-                href="https://www.facebook.com/ActisIsrael"
+                href="https://www.facebook.com/actis.cleaning.services"
                 target="_blank"
                 rel="noopener noreferrer"
                 c="inherit"
