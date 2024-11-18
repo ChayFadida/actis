@@ -116,28 +116,21 @@ export default function ContactPage() {
                   <ThemeIcon color="blue" size={24} radius="xl">
                     <IconPhone size={16} />
                   </ThemeIcon>
-                  <Text>סניף נתניה: 098612614</Text>
-                </Group>
-
-                <Group gap="xs">
-                  <ThemeIcon color="blue" size={24} radius="xl">
-                    <IconPhone size={16} />
-                  </ThemeIcon>
-                  <Text>סניף תל אביב: 036886887</Text>
+                  <Text>טלפון: 0505378402</Text>
                 </Group>
 
                 <Group gap="xs">
                   <ThemeIcon color="green" size={24} radius="xl">
                     <IconBrandWhatsapp size={16} />
                   </ThemeIcon>
-                  <Text>וואטסאפ: 050-1234567</Text>
+                  <Text>WhatsApp: 0505378402</Text>
                 </Group>
 
                 <Group gap="xs">
                   <ThemeIcon color="blue" size={24} radius="xl">
                     <IconMail size={16} />
                   </ThemeIcon>
-                  <Text>דוא״ל: info@actis.co.il</Text>
+                  <Text>דוא״ל: office@actis.co.il</Text>
                 </Group>
               </Stack>
             </Paper>
