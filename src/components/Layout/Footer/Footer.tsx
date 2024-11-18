@@ -59,7 +59,7 @@ export const Footer = () => {
             <Group gap="xs">
               <IconBrandFacebook size={20} />
               <Anchor
-                href="https://www.facebook.com/ActisIsrael"
+                href="https://www.facebook.com/actis.cleaning.services"
                 target="_blank"
                 rel="noopener noreferrer"
                 c="inherit"
