@@ -58,4 +58,13 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.link {
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--mantine-color-blue-5);
+  }
 } 

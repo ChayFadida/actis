@@ -18,7 +18,7 @@ import styles from './Footer.module.css';
 export const Footer = () => {
   const phoneNumber = '04-8515150';
   const whatsappLink = `https://wa.me/972505378402`;
-  const emailAddress = 'info@actis.co.il';
+  const emailAddress = 'actis-shai@hotmail.com';
 
   return (
     <footer className={styles.footer}>

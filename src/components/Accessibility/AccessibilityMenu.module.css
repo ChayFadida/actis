@@ -1,6 +1,6 @@
 .accessibilityWrapper {
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   left: 20px;
   z-index: 9999;
   display: flex;
@@ -18,11 +18,9 @@
   color: white;
   transition: all 0.3s ease;
   position: fixed;
-  bottom: 20px;
+  top: 20px;
   left: 20px;
   z-index: 9999;
-  transform: translateZ(0);
-  will-change: transform;
 
   &:hover {
     transform: scale(1.1);
@@ -32,15 +30,13 @@
 
 .accessibilityMenu {
   position: fixed;
-  bottom: 90px;
+  top: 90px;
   left: 20px;
   width: 300px;
   background-color: var(--mantine-color-white);
   border-radius: var(--mantine-radius-md);
   box-shadow: var(--mantine-shadow-lg);
   z-index: 9998;
-  transform: translateZ(0);
-  will-change: transform;
 }
 
 /* Font size classes */
