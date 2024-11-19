@@ -3,6 +3,9 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
+# Enable Corepack and set up Yarn
+RUN corepack enable && corepack prepare yarn@4.5.1 --activate
+
 # Define build arguments
 ARG RESEND_API_KEY
 ARG CONTACT_EMAIL
@@ -12,7 +15,8 @@ ENV RESEND_API_KEY=$RESEND_API_KEY
 ENV CONTACT_EMAIL=$CONTACT_EMAIL
 
 # Copy package files
-COPY package.json yarn.lock ./
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn ./.yarn
 
 # Install dependencies
 RUN yarn install
@@ -22,10 +26,6 @@ COPY next.config.mjs .
 COPY tsconfig.json .
 COPY public ./public
 COPY src ./src
-
-# Create .env file from build arguments
-RUN echo "RESEND_API_KEY=$RESEND_API_KEY" > .env && \
-    echo "CONTACT_EMAIL=$CONTACT_EMAIL" >> .env
 
 # Build the application
 ENV NEXT_TELEMETRY_DISABLED 1
@@ -48,7 +48,6 @@ COPY --from=builder /app/next.config.mjs ./
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/.env ./.env
 
 # Set correct permissions
 RUN chown -R nextjs:nodejs /app
