@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Stack, 
   Group, 
@@ -26,7 +26,7 @@ import {
 } from '@tabler/icons-react';
 import styles from './AccessibilityMenu.module.css';
 
-const FontSizeButtons = () => {
+const FontSizeButtons = ({ onReset }: { onReset: () => void }) => {
   const [currentSize, setCurrentSize] = useState(100);
 
   const changeFontSize = (newSize: number) => {
@@ -49,6 +49,16 @@ const FontSizeButtons = () => {
   const reset = () => {
     changeFontSize(100);
   };
+
+  useEffect(() => {
+    const handleReset = () => {
+      changeFontSize(100);
+    };
+    
+    if (onReset) {
+      handleReset();
+    }
+  }, [onReset]);
 
   return (
     <Group justify="center" gap="sm">
@@ -88,6 +98,7 @@ export const AccessibilityMenu = () => {
     linkHighlight: false,
     readableFont: false,
   });
+  const [resetTrigger, setResetTrigger] = useState(false);
 
   const handleContrastChange = (value: string) => {
     // Remove all contrast-related classes first
@@ -117,10 +128,7 @@ export const AccessibilityMenu = () => {
   };
 
   const handleReset = () => {
-    // Reset font size
-    document.documentElement.style.fontSize = '100%';
-
-    // Reset contrast mode
+    // Reset all other features
     setContrastMode('none');
     document.body.classList.remove(
       styles.highContrast,
@@ -129,7 +137,6 @@ export const AccessibilityMenu = () => {
       styles.lightBackground
     );
 
-    // Reset other features
     setActiveFeatures({
       linkHighlight: false,
       readableFont: false,
@@ -138,6 +145,9 @@ export const AccessibilityMenu = () => {
       styles.linkHighlight,
       styles.readableFont
     );
+
+    // Trigger font size reset
+    setResetTrigger(prev => !prev);
   };
 
   return (
@@ -159,7 +169,7 @@ export const AccessibilityMenu = () => {
             <Text fw={700} ta="center">הגדרות נגישות</Text>
 
             <Divider label="גודל טקסט" labelPosition="center" />
-            <FontSizeButtons />
+            <FontSizeButtons onReset={resetTrigger} />
 
             <Divider label="מצב תצוגה" labelPosition="center" />
             

@@ -12,7 +12,8 @@ import {
   Button,
   Select,
   Group,
-  ThemeIcon
+  ThemeIcon,
+  Anchor
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
@@ -29,6 +30,9 @@ import {
 import styles from './Contact.module.css';
 
 export default function ContactPage() {
+  const phoneNumber = '0505378402';
+  const whatsappLink = `https://wa.me/972${phoneNumber.substring(1)}`;
+
   const form = useForm({
     initialValues: {
       name: '',
@@ -116,21 +120,35 @@ export default function ContactPage() {
                   <ThemeIcon color="blue" size={24} radius="xl">
                     <IconPhone size={16} />
                   </ThemeIcon>
-                  <Text>טלפון: 04-8515150</Text>
+                  <Text>טלפון: {phoneNumber}</Text>
                 </Group>
 
                 <Group gap="xs">
-                  <ThemeIcon color="green" size={24} radius="xl">
+                  <ThemeIcon color="blue" size={24} radius="xl">
                     <IconBrandWhatsapp size={16} />
                   </ThemeIcon>
-                  <Text>WhatsApp: 0505378402</Text>
+                  <Anchor
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    c="inherit"
+                    className={styles.link}
+                  >
+                    WhatsApp
+                  </Anchor>
                 </Group>
 
                 <Group gap="xs">
                   <ThemeIcon color="blue" size={24} radius="xl">
                     <IconMail size={16} />
                   </ThemeIcon>
-                  <Text>דוא״ל: info@actis.co.il</Text>
+                  <Anchor
+                    href="mailto:office@actis.co.il"
+                    c="inherit"
+                    className={styles.link}
+                  >
+                    office@actis.co.il
+                  </Anchor>
                 </Group>
               </Stack>
             </Paper>
