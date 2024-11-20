@@ -143,11 +143,11 @@ export default function ContactPage() {
                     <IconMail size={16} />
                   </ThemeIcon>
                   <Anchor
-                    href="mailto:office@actis.co.il"
+                    href="mailto:actis-shai@hotmail.com"
                     c="inherit"
                     className={styles.link}
                   >
-                    office@actis.co.il
+                    actis-shai@hotmail.com
                   </Anchor>
                 </Group>
               </Stack>
