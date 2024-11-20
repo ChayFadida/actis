@@ -26,7 +26,7 @@ import {
 } from '@tabler/icons-react';
 import styles from './AccessibilityMenu.module.css';
 
-const FontSizeButtons = ({ onReset }: { onReset: () => void }) => {
+const FontSizeButtons = ({ onReset }: { onReset: boolean }) => {
   const [currentSize, setCurrentSize] = useState(100);
 
   const changeFontSize = (newSize: number) => {
@@ -51,12 +51,8 @@ const FontSizeButtons = ({ onReset }: { onReset: () => void }) => {
   };
 
   useEffect(() => {
-    const handleReset = () => {
-      changeFontSize(100);
-    };
-    
     if (onReset) {
-      handleReset();
+      changeFontSize(100);
     }
   }, [onReset]);
 
